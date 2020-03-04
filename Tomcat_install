@@ -1,0 +1,40 @@
+Tomcat 安装实战
+
+  1、传输 JDK 安装包到 Linux系统
+	在安装 tomcat 之前，需要先安装 java 运行环境，可在 http://www.oracle.com/technetwork/index.html 官网下载最新版本
+	把下载的 .rpm 安装包，利用 FecureFX 工具上传到 Linux
+  
+  2、直接用 rpm 命令安装 jdk 包
+	rpm -ivh 包名
+	安装成功后，输入 java -version 命令进行验证
+
+  3、设置 java 变量环境
+	命令打开 /etc/profile 文件，在最后加上两行：
+		例如：JAVA_HOME=/usr/java/jdk1.7.0_35
+		     export JAVA_HOME
+
+	保存退出后，生效一下文件：
+		source /etc/profile
+
+  4、下载并压缩 Tomcat 的压缩包
+	可以在官网 http://tomcat.apache.org 下载最新版本 tomcat
+	利用 FecureFX 工具将下载的压缩包上传到 Linux
+	执行压缩命令：
+		tar -zxvf 包
+
+  5、复制压缩文件以及创建符号链接
+	由于 tomcat 无需安装直接可以使用，所以直接将解压后的目录复制到 /usr/local 目录下去：
+		cp -R 压缩后的文件目录名 /usr/local
+
+	为了使用方便，我们用符号链接创建一个 tomcat 链接：
+		ln -s /usr/local/压缩后的文件目录名 /usr/local/tomcat
+
+  6、启动 tomcat
+	尝试启动 tomcat 运行 /usr/local/tomcat/bin/startup.sh 脚本
+
+  7、开启端口
+	为了在 windows 下用浏览器验证 tomcat能否打开，需要打开 tomcat 需要的 8080 端口：
+		iptables -I INPUT -p tcp --dport 8080 -j ACCEPT
+
+  8、打开 windows 浏览器，访问 http://ip:8080/ ,其中‘ip’是 Linux系统的ip地址
+	页面正常打开，即 tomcat 运行成功
