@@ -1,0 +1,126 @@
+        WEB 技术学习笔记
+
+一、HTML语言
+	1、文本标签
+		常用 <font> 标签，用于改变字体、字号、文字颜色
+			例如：<font size="6">测试</font>
+		     	<font color="red" size="6">红色的测试</font>
+    		     	<font face="黑体">黑体的字</font>
+
+
+
+		加粗、下划线、斜体字，分别用<b> <u> <i> 标签表示：
+			例如：<b>Bold</b>
+		     	<u>Underline</u>
+		     	<i>italic</i>
+
+
+
+		标题标签一般用<h1> <h2> <h3> <h4> <h5> <h6> 表示，分别是一级标题、二级标题、三级标题。。。
+			例如：<h1>HTML 简易入门教程</h1>
+		     		... ...
+
+
+
+	2、图片标签
+		<hr>标签用于在页面上添加横线
+			例如：<hr width="90%" color="red" >
+
+
+
+		<img>标签用于在页面上添加图片，src属性指定图片地址
+			例如：<img src=“图片路径”>
+				//注：上方的 图片路径 也可以是网上的一个地址
+
+
+
+	3、链接标签
+		超级链接用 <a> 标签表示，href 属性指定了链接到的地址，<a> 标签可以包含文本、图片
+			例如：<a href="http://www.163.com">网易首页</a>
+		     	     <a href="http://www.baidu.com"><img sre="图片路径"/></a>
+
+
+
+	4、分段和换行
+		分段标签常用 <p> 标签，换行标签常用 <br>
+			例如：<p>这是第一段。</p>
+
+
+
+	5、表格
+		表格标签 <table> 里可以包含过个 <tr>标签，<tr>表示表格里的一行，<tb>表示一个单元格
+			例如：<table>
+				<tr>
+				   <td>2000</td><td>悉尼</td>
+				</tr>
+				... ...
+			     </table>
+
+
+
+		表头、表正文、表脚的标签为 <thead> <tbody> <tfoot>，<th> 和 <tb>相似，也是用在<tr>里，但 <th> 代表单元格所在行和列的标题
+			例如：<table>
+				<thead>
+				     <tr><th>时间</th><th>地点</th></tr>
+				</thead>
+				<tbody>
+				     <tr><td>2000</td><td>悉尼</td>/tr>
+				     ... ...
+				</tbody>
+			     </table>
+
+			如果需要给表格带上边框，可以在 <table> 后使用 border=“1”，例如：
+					<table border="1">
+						... ...
+					</table>
+
+
+
+	6、列表
+		一维数据用列表表示，列表分为：无序列表<ul>，有序列表<ol>，定义列表<dl>，都用 <li> 标签包含列表项目
+			例如：无序列表，项目之间没有先后顺序
+				<ul>
+				   <li>苹果</li>
+				   <li>橘子</li>
+				   <li>桃</li>
+				</ul>
+
+			     有序列表中个项目间的顺序很重要，浏览器会自动给他们产生编号
+				<ol>
+				   <li>打开冰箱</li>
+				   <li>把大象赶进去</li>
+				   <li>关上冰箱门</li>
+				</ol>
+
+			     
+
+	7、框架
+		<frameset> 标签的属性 rows 和 cols 用于指定框架集（frameset）里有多少行（列），以及每行（列）的高度（宽度）。
+		<frameset> 标签可以包含 <frame> 标签，每个 <frame> 标签代表一个文档（src 属性指定文档的地址）
+
+			<frameset rows="15%,*">        //表示分成两行，第一行占整页的15%，第二行占其他所有
+				<frame src="top.html" name=title scrolling=no>
+				<frameset cols="20%,2*,100">        //表示分成三列，第一列占20%，第二列占去全部的2/3，第三列占 100px
+					<frame src="left.html" name=sidebar>
+					<frame src="right.html" name=recipes>
+				</frameset>
+			</frameset>
+
+
+
+		现在更多地使用 <iframe> 这种内联框架技术，其语法为：
+			<iframe src="URL"></iframe>
+		height 和 width 属性用于规定 iframe 的高度和宽度。属性值的默认单位是 像素，也可以用百分比来设定（比如：“80%”）
+			例如：<iframe src="demo.html" width="200" height="200"></iframe>
+			去掉边框，例如：<iframe src="demo.htm" frameborder="0"></iframe>
+
+
+
+	8、注释
+		表示形式如下：
+			<!--
+			   ... ...
+			   ... ...
+			//-->
+
+	
