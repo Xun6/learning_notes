@@ -1,0 +1,48 @@
+                     Jmeter 学习笔记
+
+
+
+1、命令：
+	jmeter -n -t sample.jmx -l log.jtl
+
+		-n：这是指定JMeter在非用户界面模式运行
+		-t：包含测试计划的JMX文件的名字
+		-l：记录取样结果的JTL文件的名字
+
+
+
+
+2、Jmeter + ant
+
+	2.1、下载地址
+		http://ant.apache.org/bindownload.cgi，下载后解压到指定位置即可。
+	
+	2.2、配置 ant 的环境变量
+		ANT_HOME 为 ant解压位置
+		CLASSPATH为 %ANT_HOME%\lib;
+		Path为%ANT_HOME%\bin;
+
+	2.3、安装验证
+		.环境变量配置成功验证->dos中输入ant，提示：Buildfile: build.xml does not exist!
+
+		.验证安装结果，命令行输入ant -v，出现版本信息，则安装成功。
+
+	2.4、安装路径
+		将JMeter所在目录下extras子目录里的ant-jmeter-1.1.1.jar复制到Ant所在目录lib子目录之下，这样Ant运行时才能找到"org.programmerplanet.ant.taskdefs.jmeter.JMeterTask"这个类，从而成功触发JMeter脚本。
+
+	2.5、设置格式
+		jmeter默认保存的是.csv格式的文件，所以我们先要设置一下bin/jmeter.properties文件内容，保存jmeter.save.saveservice.output_format=xml。
+
+
+
+具体内容请去如下地址查看：https://www.showdoc.cc/yuxunzhi?page_id=4137268739750516
+
+
+
+
+
+
+
+
+
+
