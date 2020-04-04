@@ -1,0 +1,66 @@
+1.Native原生app的自动化测试
+  非标准组件特征：不是标准，但是属于原生空间
+	      非 webview 组件
+	      HTML 控件被编译为 Native 控件
+	      HTML 的文本属性被解析为 Native 属性
+	      text 还是 content-desc 取决于 API 版本
+
+
+  只要是 Android 组件都具备可以被 Uiautomator 识别 
+
+
+
+
+2.常见 Native 自动化测试方法
+	android 原生组件：Appium 默认支持
+	Native非标准组件：Appium 默认支持  （有些属性可能因为框架的原因缺少，需要和开发进行沟通约定，增加可访问性）
+	
+
+
+
+3.Hybrid 混合 App 的自动化测试
+
+
+
+
+4.iOS主流移动测试框架
+	Appium: 可跨平台
+	Calabash iOS: 支持Android和iOS （本身是由 Ruby 进行开发的）
+	KIF: 性能比较高的一个框架
+	XCTest: 苹果提供的一个框架，可以完成整个测试用例的管理体系
+	WebDriverAgent: 基于XCTest facebook开源的一个webdriveragent项目，appium能做ios自动化也是得益于这个项目
+	UIAutomation:(在 Xcode8 后废弃)
+
+4.1常用测试辅助工具
+	依赖工具包安装
+		brew install --HEAD ideviceinstaller
+		brew install --HEAD libimobiledevice
+		brew install iOS-deploy
+	查看模拟器列表：instruments -s device
+	查看真机列表： idevice_id -l
+	安装app：ideviceinstaller -i demo.app  高版本使用：ios-deploy
+	命令行编译：
+		xcodebuild -scheme UICatalog -target iOS clean build
+		xcodebuild -scheme UICatalog -target iOS archive
+
+
+5.证书体系
+	Certificates:苹果签发
+		开发证书：开发者使用
+		发布证书：对外分化到APP Store 或者使用 ad-hoc 模式分发
+	Provisioning Profiles:
+		App ID: bundleID 相关设置
+		Devices List: 可内测的真机列表
+		分为开发和发布两种大类型
+		发布又分为 ad-hoc、app store、enterprise 级别
+	.app文件：编译后生成的项目打包代码
+	.ipa文件：经过签名后的打包文件，本质是zip文件
+
+
+
+--------------------------------
+
+6、安装 Homebrew 的命令如下：
+
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+	
