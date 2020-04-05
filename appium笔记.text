@@ -9,7 +9,7 @@
   只要是 Android 组件都具备可以被 Uiautomator 识别 
 
 
-
+-----------------------------------------
 
 2.常见 Native 自动化测试方法
 	android 原生组件：Appium 默认支持
@@ -21,7 +21,7 @@
 3.Hybrid 混合 App 的自动化测试
 
 
-
+----------------------------------------
 
 4.iOS主流移动测试框架
 	Appium: 可跨平台
@@ -43,6 +43,7 @@
 		xcodebuild -scheme UICatalog -target iOS clean build
 		xcodebuild -scheme UICatalog -target iOS archive
 
+----------------------------------
 
 5.证书体系
 	Certificates:苹果签发
@@ -63,4 +64,46 @@
 6、安装 Homebrew 的命令如下：
 
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+
+------------------------------------
+
+7、monkey maxim 遍历测试工具
+
+	项目地址：github.com/zhangzhao4444/Maxim
+	1)、把项目克隆到本地
+	2）、把项目中的两个.jar包，push到Android模拟器中去
+		adb push framework.jar /sdcard
+		add push monkey.jar /sdcard
+	3)、命令行运行遍历
+		混合遍历（Mix）
+		深度遍历（dfs）
+
+
+
+------------------------------------
+
+8、常见自建平台的技术架构
+	. 前台技术架构：Vue、Bootstrap、AntD
+	. 后台技术架构：Django、Flask、SpringBoot、Rails
+	. 测试用例执行：Jenkins
+	. 测试数据存储：MySQL、ElasticSearch、RethinkDB
+	. 数据分析：Kibana、ECharts、D3.js
+
+
 	
+		常见的相关开源平台与架构
+			. Android 测试设备管理：STF
+			. Android 与 iOS 任务调度：Selenium Grid
+			. 持续集成平台：Jenkins
+			. 测试报告框架：Allure2
+
+
+	智能设备选购
+		. 终端机：Ubuntu、Mac
+		. USB Hub 或者 ADB Wifi 模式
+
+		. 智能设备：
+		. 自购：中小公司10～30，大公司50～200
+		. 租用设备：本地租用、云端远程租用
+
