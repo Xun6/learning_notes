@@ -1,0 +1,29 @@
+				STF 搭建笔记
+
+项目地址：https://github.com/openstf/stf
+
+环境搭建参考地址：https://testerhome.com/topics/16215
+
+
+##### 解决好***问题，搞不定就用cnpm，安装之前先卸载为佳，因为npm bug挺多，会误判一些lib
+	#npm uninstall -g stf
+
+	#rm -rf /usr/local/lib/node_modules/stf/
+
+	npm install -g stf
+
+
+
+1、npm install -g stf		#安装stf
+
+
+ 
+2、stf doctor             #查看工具依赖是否正确
+
+
+
+3、stf local		#快速搭建一个本地的环境
+
+
+
+4、找到主端口（如：http://localhost:7100/），在浏览器中打开，并登陆

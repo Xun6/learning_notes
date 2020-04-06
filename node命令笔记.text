@@ -1,0 +1,35 @@
+                           	node 版本变更
+
+
+
+1、安装 node 版本管理模块 n
+	sudo npm(或cnpm) install n -g
+
+
+
+2、安装稳定版本
+	sudo n stable
+
+
+
+3、安装最新版
+	sudo n latest
+
+
+
+4、检测目前已安装了哪些版本
+	n
+
+
+
+5、升级/降级到指定版本
+	sudo n 版本号
+
+
+
+6、删除版本
+	sudo n rm 版本号
+
+
+
+
