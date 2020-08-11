@@ -5,6 +5,13 @@
 环境搭建参考地址：https://testerhome.com/topics/16215
 
 
+#如果已经安装可以使用brew upgrade进行升级
+brew install rethinkdb graphicsmagick zeromq protobuf yasm pkg-config
+
+#了解下自己的node版本和npm的版本
+npm version
+
+
 ##### 解决好***问题，搞不定就用cnpm，安装之前先卸载为佳，因为npm bug挺多，会误判一些lib
 	#npm uninstall -g stf
 
