@@ -4,10 +4,10 @@ package ObjectStudy;// >> TODO 一个类以public class开头，代表这个类�
 public class Merchandise {
     // >> TODO 类体中可以定义描述这个类的属性变量。我们称之为成员变量（member variable）
     // >> TODO 每个成员变量的定义以;结束
-    String name;
-    String id;
-    int count;
-    double price;
+    public String name;
+    public String id;
+    public int count;
+    public double price;
 }
 
 
