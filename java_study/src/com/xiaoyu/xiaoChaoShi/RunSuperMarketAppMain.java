@@ -16,7 +16,7 @@ public class RunSuperMarketAppMain {
         littleSuperMarket.merchandises = new Merchandise[200];  //初始化 200 个商品
         littleSuperMarket.merchandiseSold = new int[littleSuperMarket.merchandises.length];  //相同索引下商品售卖数量
 
-        //给商品赋值
+        //给商品遍历赋值
         Merchandise[] all = littleSuperMarket.merchandises;
         for(int i =0; i<all.length; i++){
             //实例化商品类
