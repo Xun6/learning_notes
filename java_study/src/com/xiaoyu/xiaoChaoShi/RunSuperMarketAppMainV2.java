@@ -1,5 +1,7 @@
 package com.xiaoyu.xiaoChaoShi;
-
+/**
+ * 计算毛利润最高的商品
+ * */
 import com.xiaoyu.xiaoChaoShi.supermarket.LittleSuperMarketV2;
 import com.xiaoyu.xiaoChaoShi.supermarket.MerchandiseV2;
 
@@ -21,7 +23,7 @@ public class RunSuperMarketAppMainV2 {
             all[i] = m;
         }
 
-        System.out.println("请输出毛利润最好的商品：");
+        System.out.println("请输出毛利润最高的商品：");
         littleSuperMarketV2.getBiggestProfitMerchandise().describe();
     }
 }
