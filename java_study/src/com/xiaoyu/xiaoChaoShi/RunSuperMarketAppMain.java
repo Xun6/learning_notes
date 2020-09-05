@@ -6,6 +6,10 @@ import com.xiaoyu.xiaoChaoShi.supermarket.Merchandise;
 
 import java.util.Scanner;
 
+/**
+ * @author xiaoyu
+ */
+
 public class RunSuperMarketAppMain {
     public static void main(String[] args){
         //实例化小超市
