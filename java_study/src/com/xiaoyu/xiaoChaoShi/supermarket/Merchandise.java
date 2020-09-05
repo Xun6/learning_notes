@@ -1,5 +1,7 @@
 package com.xiaoyu.xiaoChaoShi.supermarket;
 
+import com.sun.xml.internal.bind.v2.TODO;
+
 /** 这是一个 商品类 */
 public class Merchandise {
     public String name;  //商品名称

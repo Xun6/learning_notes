@@ -28,4 +28,30 @@ public class Merchandise_V6 {
                 + id + "，库存是： " + count + "，商品售价为："+ soldPrice
                 + "，单个进价为：" + purchasePrice +"，单个毛利润为：" + (soldPrice-purchasePrice));
     }
+
+    // >> TODO 方法的重载，重载的方法可以调用别的重载方法
+    //    TODO 方法签名 = 方法名 + 参数类型
+    //买一个
+    public double buy(){
+        return buy(1);
+    }
+
+    //买多个
+    public double buy(int count){
+        return buy(count,false);
+    }
+
+    //买多个，有会员打 95折
+    public double buy(int count,boolean isVIP){
+        if(this.count < count){
+            return -1;
+        }
+        this.count -= count;
+        double totalCost = count * soldPrice;
+        if(isVIP){
+            return totalCost * 0.95;
+        } else {
+            return totalCost;
+        }
+    }
 }

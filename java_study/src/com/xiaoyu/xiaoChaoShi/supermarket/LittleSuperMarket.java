@@ -1,6 +1,8 @@
 package com.xiaoyu.xiaoChaoShi.supermarket;
 
-/** 一个小超市类 */
+/**
+ * 一个小超市类
+ */
 public class LittleSuperMarket {
     public String superMarketName;    //超市名称
     public String address;    //超市地址
