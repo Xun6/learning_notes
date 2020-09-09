@@ -1,14 +1,32 @@
 package com.xiaoyu.xiaoChaoShi.supermarket;
 
 public class Merchandise_V6 {
-    public String name;  //商品名称
-    public String id;   //商品id
-    public int count;   //商品数量
-    public double soldPrice;   //商品售价
-    public double purchasePrice;  //商品进价
+    private String name;  //商品名称
+    private String id;   //商品id
+    private int count;   //商品数量
+    private double soldPrice;   //商品售价
+    private double purchasePrice;  //商品进价
 
     //设置静态变量，打95折
     public static double DISCOUNT_FOR_VIP = 0.95;
+
+    private Merchandise_V6(String name,String id,int count,double soldPrice,double purchasePrice){
+        this.name = name;
+        this.id = id;
+        this.count = count;
+        this.soldPrice = soldPrice;
+        this.purchasePrice = purchasePrice;
+    }
+
+    // >> TODO 有时候，会把所有的构造方法都定义成 private，然后使用静态方法调用构造方法
+    // >> TODO 同样的，这样的好处是可以通过代码检查每个属性值是否合法
+    public static Merchandise_V6 createMerchandise(String name, String id, int count, double soldPrice, double purchasePrice){
+        //必须满足条件，才能成功实例化对象
+        if(soldPrice < 0 || purchasePrice < 0){
+            return null;
+        }
+        return new Merchandise_V6(name, id, count, soldPrice, purchasePrice);
+    }
 
     /**
      *
