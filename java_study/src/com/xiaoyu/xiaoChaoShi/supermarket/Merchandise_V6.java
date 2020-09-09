@@ -7,6 +7,9 @@ public class Merchandise_V6 {
     public double soldPrice;   //商品售价
     public double purchasePrice;  //商品进价
 
+    //设置静态变量，打95折
+    public static double DISCOUNT_FOR_VIP = 0.95;
+
     /**
      *
      * @param name  外部传递的商品名称
@@ -26,7 +29,8 @@ public class Merchandise_V6 {
     public void descript(){
         System.out.println("商品名称为：" + name +"，商品Id是："
                 + id + "，库存是： " + count + "，商品售价为："+ soldPrice
-                + "，单个进价为：" + purchasePrice +"，单个毛利润为：" + (soldPrice-purchasePrice));
+                + "，单个进价为：" + purchasePrice +"，单个毛利润为：" + (soldPrice-purchasePrice)+
+                ",折扣为：" + DISCOUNT_FOR_VIP);
     }
 
     // >> TODO 方法的重载，重载的方法可以调用别的重载方法
@@ -49,7 +53,7 @@ public class Merchandise_V6 {
         this.count -= count;
         double totalCost = count * soldPrice;
         if(isVIP){
-            return totalCost * 0.95;
+            return totalCost * DISCOUNT_FOR_VIP;
         } else {
             return totalCost;
         }

@@ -10,4 +10,19 @@ public class LittleSuperMarket {
     public double incomingSum;   //收入总和
     public Merchandise[] merchandises;   //商品数组
     public int[] merchandiseSold;  //对应商品售卖数数组
+
+
+    public LittleSuperMarket(){
+
+    }
+
+    /**
+     * 带参构造方法
+     */
+    public LittleSuperMarket(String superMarketName,String address,int parkingCount,double incomingSum){
+        this.superMarketName = superMarketName;
+        this.address = address;
+        this.parkingCount = parkingCount;
+        this.incomingSum = incomingSum;
+    }
 }
