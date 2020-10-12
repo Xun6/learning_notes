@@ -1,11 +1,33 @@
 package com.xiaoyu.xiaoChaoShi.supermarket;
 
-public class Merchandise_V6 {
+public class  Merchandise_V6 {
     private String name;  //商品名称
     private String id;   //商品id
     private int count;   //商品数量
     private double soldPrice;   //商品售价
     private double purchasePrice;  //商品进价
+
+    public Merchandise_V6() {
+
+    }
+
+
+    //------------------新增封装调用方法-----------------------
+    public void setName(String name){
+        this.name = name;
+    }
+    public void setId(String id){
+        this.id = id;
+    }
+    public void setCount(int count){
+        this.count = count;
+    }
+    public void setSoldPrice(double soldPrice){
+        this.soldPrice = soldPrice;
+    }
+    public void setPurchasePrice(double purchasePrice){
+        this.purchasePrice = purchasePrice;
+    }
 
     //设置静态变量，打95折
     public static double DISCOUNT_FOR_VIP = 0.95;

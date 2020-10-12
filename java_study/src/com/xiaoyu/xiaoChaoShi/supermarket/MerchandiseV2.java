@@ -7,7 +7,7 @@ public class MerchandiseV2 {
     public int count;   //商品数量
     public double soldPrice;   //商品售价
     public double purchasePrice;  //商品进价
-
+ 
     public void describe(){
         double oneIncomming = soldPrice - purchasePrice;
         System.out.println("商品名称为：" + name +"\n商品Id是："
