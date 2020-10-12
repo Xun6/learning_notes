@@ -5,16 +5,21 @@ package extendsDemo;
  */
 public class Phone extends Merchandise_V7{
     //给phone的特有属性
-    private double screenSize;
-    private double cpuHZ;
+//    private double screenSize;
+//    private double cpuHZ;
+    // TODO protected可见性 = defualt + 对子类可见
+    protected double screenSize;
+    protected double cpuHZ;
     private int memoryG;
     private int storageG;
     private String brand;
     private String os;
     private static int MAX_BUY_ONE_ORDER = 5;    //类变量
+    // TODO 用 final 修饰引用，最难理解
+    private final Merchandise_V7 gift;
 
     public Phone(String name,String id,int count,double soldPrice,double purchasePrice,
-                 double screenSize,double cpuHZ,int memoryG,int storageG,String brand,String os){
+                 double screenSize,double cpuHZ,int memoryG,int storageG,String brand,String os,Merchandise_V7 gift){
 
         super(name,id,count,soldPrice,purchasePrice);
         this.screenSize = screenSize;
@@ -23,6 +28,7 @@ public class Phone extends Merchandise_V7{
         this.storageG = storageG;
         this.brand = brand;
         this.os = os;
+        this.gift = gift;
 
 //        this.setName(name);
 //        this.setId(id);
@@ -82,6 +88,13 @@ public class Phone extends Merchandise_V7{
 
     public void setOs(String os) {
         this.os = os;
+    }
+
+//    public void setGift(Merchandise_V7 gift){
+//        this.gift = gift;
+//    }
+    public Merchandise_V7 getGift(){
+        return gift;
     }
 
     public String getName(){

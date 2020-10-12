@@ -25,6 +25,15 @@ public class LittleSuperMarketV7 {
         this.address = address;
         this.parkingCount = parkingCount;
 
+        //初始化新增手机赠品
+        Merchandise_V7 giftForPhone = new Merchandise_V7(
+                "手机赠品-64G储存卡",
+                "GIFT001",
+                1,
+                120,
+                60
+        );
+
         merchandisesV7 = new Merchandise_V7[merchandiseCount];
         for(int i=0; i <merchandisesV7.length; i++){
             //创建手机，手机壳变色手机，和普通商品都放在商品数组
@@ -41,7 +50,8 @@ public class LittleSuperMarketV7 {
                         4,
                         128,
                         "三星",
-                        "Android"
+                        "Android",
+                        giftForPhone
                 );
             } else if (i >0 & i%10 == 0) {
                 m = new Phone(
@@ -55,7 +65,8 @@ public class LittleSuperMarketV7 {
                         4,
                         128,
                         "索尼",
-                        "Android"
+                        "Android",
+                        giftForPhone
                 );
             } else {
                 double purchasePrice = Math.random() * 200;

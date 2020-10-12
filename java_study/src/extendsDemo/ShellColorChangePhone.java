@@ -5,11 +5,14 @@ public class ShellColorChangePhone extends Phone{
 
     public ShellColorChangePhone(String name,String id,int count,double soldPrice,double purchasePrice,
                                  double screenSize,double cpuHZ,int memoryG,int storageG,String brand,
-                                 String os){
-        super(name,id,count,soldPrice,purchasePrice,screenSize,cpuHZ,memoryG,storageG,brand,os);
+                                 String os,Merchandise_V7 gift){
+        super(name,id,count,soldPrice,purchasePrice,screenSize,cpuHZ,memoryG,storageG,brand,os,gift);
         enableShellColorChange = false;
     }
 
+    public boolean isEnableShellColorChange(){
+        return enableShellColorChange;
+    }
 
     @Override
     public double buy(int count){
