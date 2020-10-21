@@ -83,7 +83,7 @@ public class LittleSuperMarketV7 {
         }
         merchandiseSold = new int[merchandisesV7.length];
     }
-
+//-----------------------------------------
     // 简单的访问成员变量
 
     public String getSuperMarketName() {
@@ -125,8 +125,33 @@ public class LittleSuperMarketV7 {
     public void setMerchandiseSold(int[] merchandiseSold) {
         this.merchandiseSold = merchandiseSold;
     }
+    public Merchandise_V7[] getMerchandisesV7() {
+        return merchandisesV7;
+    }
+
+    public void setMerchandisesV7(Merchandise_V7[] merchandisesV7) {
+        this.merchandisesV7 = merchandisesV7;
+    }
+
+    public int[] getMerchandiseSold() {
+        return merchandiseSold;
+    }
 
     //一些特殊的逻辑
+
+    /**
+     * 求进价成本最高的商品
+     * @return
+     */
+    public double getBiggerPurchesPrice(){
+        double maxPurchesPrice = -1;
+        for(Merchandise_V7 m : merchandisesV7){
+            if(m.getPurchasePrice() > maxPurchesPrice){
+                maxPurchesPrice = m.getPurchasePrice();
+            }
+        }
+        return maxPurchesPrice;
+    }
 
     /**
      * 得到利润最高的商品
