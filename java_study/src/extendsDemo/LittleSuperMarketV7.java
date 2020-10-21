@@ -1,7 +1,6 @@
 package extendsDemo;
 
 
-
 /** 一个小超市类 */
 public class LittleSuperMarketV7 {
     public String superMarketName;    //超市名称
@@ -84,6 +83,26 @@ public class LittleSuperMarketV7 {
         merchandiseSold = new int[merchandisesV7.length];
     }
 //-----------------------------------------
+
+    /**
+     * 比较商品对象是否相等
+     * @return
+     */
+    public boolean findMerchandise(Merchandise_V7 target){
+        int i =0;
+        for(Merchandise_V7 m : merchandisesV7){
+            boolean match = m.equals(target);
+//            boolean match = (m == target);
+            if(match){
+                System.out.println("找到了商品，位置在：" + i);
+                return true;
+            }
+            i++;
+        }
+        return false;
+    }
+
+    //----------------------------------
     // 简单的访问成员变量
 
     public String getSuperMarketName() {

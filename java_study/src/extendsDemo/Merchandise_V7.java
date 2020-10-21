@@ -1,5 +1,7 @@
 package extendsDemo;
 
+import java.util.Objects;
+
 public class Merchandise_V7 {
     private String name;  //商品名称
     private String id;   //商品id
@@ -54,6 +56,27 @@ public class Merchandise_V7 {
         } else{
             return -1;
         }
+    }
+    //-------------hashCode 和 equals方法学习
+    //TODO hashCode 和 equals是我们最常覆盖的方法
+    //TODO 覆盖的原则是，equals为true，hashCode就应该相等，这是一种约定俗成的规范
+    //TODO 即equals为true是hashCode相等的充分非必要条件，hashCode相等是equals为true的必要不充分条件
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Merchandise_V7)) return false;
+        Merchandise_V7 that = (Merchandise_V7) o;
+        return this.getCount() == that.getCount() &&
+                Double.compare(that.getSoldPrice(), getSoldPrice()) == 0 &&
+                Double.compare(that.getPurchasePrice(), getPurchasePrice()) == 0 &&
+                getName().equals(that.getName()) &&
+                getId().equals(that.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getId(), getCount(), getSoldPrice(), getPurchasePrice());
     }
 
     //------------------新增封装调用方法-----------------------
