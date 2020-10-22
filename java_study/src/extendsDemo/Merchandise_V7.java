@@ -62,6 +62,7 @@ public class Merchandise_V7 {
     //TODO 覆盖的原则是，equals为true，hashCode就应该相等，这是一种约定俗成的规范
     //TODO 即equals为true是hashCode相等的充分非必要条件，hashCode相等是equals为true的必要不充分条件
 
+    // 利用IDE自动生成的方法
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -77,6 +78,20 @@ public class Merchandise_V7 {
     @Override
     public int hashCode() {
         return Objects.hash(getName(), getId(), getCount(), getSoldPrice(), getPurchasePrice());
+    }
+
+    //------------------------------
+
+    //// 利用IDE自动生成的 toString 方法,对该类进行一个描述
+    @Override
+    public String toString() {
+        return "Merchandise_V7{" +
+                "name='" + name + '\'' +
+                ", id='" + id + '\'' +
+                ", count=" + count +
+                ", soldPrice=" + soldPrice +
+                ", purchasePrice=" + purchasePrice +
+                '}';
     }
 
     //------------------新增封装调用方法-----------------------
