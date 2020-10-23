@@ -3,11 +3,13 @@ package extendsDemo;
 import java.util.Objects;
 
 public class Merchandise_V7 {
-    private String name;  //商品名称
+    public String name;  //商品名称
     private String id;   //商品id
     public int count;   //商品数量
     private double soldPrice;   //商品售价
     private double purchasePrice;  //商品进价
+    //-----新增静态成员变量---
+    public static String STATIC_MEMBER = "Common Merchandise";
 
     public Merchandise_V7() {
         this("无名", "000", 0, 1, 1.1);
