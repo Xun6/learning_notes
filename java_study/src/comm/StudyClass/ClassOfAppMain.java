@@ -5,6 +5,7 @@ import extendsDemo.Merchandise_V7;
 import extendsDemo.ShellColorChangePhone;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
@@ -12,7 +13,7 @@ import java.lang.reflect.Method;
  */
 public class ClassOfAppMain {
     //设置main方法动态参数 （String...），只能放在最后一个参数位，调用方法传参时，可以不传
-    public static void main(String... args) throws NoSuchFieldException, NoSuchMethodException, IllegalAccessException {
+    public static void main(String... args) throws NoSuchFieldException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
         LittleSuperMarketV7 superMarket7 = new LittleSuperMarketV7("大卖场","杭州萧山机场",
                 500,600,100);
 
@@ -27,8 +28,8 @@ public class ClassOfAppMain {
 //        System.out.println(clazz.getSimpleName());
 
         //TODO 通过一个类的 class实例，可以获取一个类的所有信息，包括成员变量，方法等
-        Field countField = clazz.getField("count");
-        System.out.println(countField.getType());
+//        Field countField = clazz.getField("count");
+//        System.out.println(countField.getType());
 
         //---------------初探反射（上）--------------
 //        Field countFie = cla.getField("count");
@@ -36,9 +37,10 @@ public class ClassOfAppMain {
 //        countFie.set(m100,999); //给 count重新赋值
 //        System.out.println(countFie.get(m100));
 //        System.out.println(m100.count);  //直接类名调用
+
         //静态变量反射
-        Field field = clazz.getField("STATIC_MEMBER");
-        System.out.println(field.get(null));  //反射静态变量值，直接传个null
+//        Field field = clazz.getField("STATIC_MEMBER");
+//        System.out.println(field.get(null));  //反射静态变量值，直接传个null
 
         //调用静态方法
 //        printFiels(cla);
@@ -47,6 +49,22 @@ public class ClassOfAppMain {
         //TODO 变长参数和他的等价形式
         Method buyMethod = clazz.getMethod("buy", int.class);
         Method equalsMethod = clazz.getMethod("equals", Object.class);
+
+        //======初识反射（下）====
+//        Method desMethod = clazz.getMethod("describe");  //反射方法
+//        desMethod.invoke(m100);  //调用方法
+//        desMethod.invoke(superMarket7.getMerchandiseOf(10));  //调用方法
+
+        //静态方法的反射调用
+//        Method staticMethod = clazz.getMethod("getNameOf", Merchandise_V7.class);
+//        String result = (String) staticMethod.invoke(null,m100); //直接传个null，加上一个实参
+//        System.out.println(result);
+
+        //----反射特有的调用 private 修饰的field---
+        Field countFie = cla.getDeclaredField("count");
+        countFie.setAccessible(true);
+        System.out.println(countFie.get(m100)); // 反射调用
+
     }
 
     /**

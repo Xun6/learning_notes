@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Merchandise_V7 {
     public String name;  //商品名称
     private String id;   //商品id
-    public int count;   //商品数量
+    private int count;   //商品数量
     private double soldPrice;   //商品售价
     private double purchasePrice;  //商品进价
     //-----新增静态成员变量---
@@ -83,6 +83,11 @@ public class Merchandise_V7 {
     }
 
     //------------------------------
+
+    //------新增一个静态方法------
+    public static String getNameOf(Merchandise_V7 m){
+        return m.getName();
+    }
 
     //// 利用IDE自动生成的 toString 方法,对该类进行一个描述
     @Override
