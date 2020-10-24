@@ -1,5 +1,7 @@
 package extendsDemo;
 
+import comm.StudyClass.Categroy;
+
 /**
  * phone类 继承 Merchandise_V7类
  */
@@ -18,10 +20,10 @@ public class Phone extends Merchandise_V7{
     // TODO 用 final 修饰引用，最难理解
     private final Merchandise_V7 gift;
 
-    public Phone(String name,String id,int count,double soldPrice,double purchasePrice,
-                 double screenSize,double cpuHZ,int memoryG,int storageG,String brand,String os,Merchandise_V7 gift){
+    public Phone(String name, String id, int count, double soldPrice, double purchasePrice, Categroy categroy,
+                 double screenSize, double cpuHZ, int memoryG, int storageG, String brand, String os, Merchandise_V7 gift){
 
-        super(name,id,count,soldPrice,purchasePrice);
+        super(name,id,count,soldPrice,purchasePrice,categroy);
         this.screenSize = screenSize;
         this.cpuHZ = cpuHZ;
         this.memoryG = memoryG;

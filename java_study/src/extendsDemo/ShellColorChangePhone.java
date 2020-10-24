@@ -1,12 +1,14 @@
 package extendsDemo;
 
+import comm.StudyClass.Categroy;
+
 public class ShellColorChangePhone extends Phone{
     private boolean enableShellColorChange;
 
-    public ShellColorChangePhone(String name,String id,int count,double soldPrice,double purchasePrice,
-                                 double screenSize,double cpuHZ,int memoryG,int storageG,String brand,
-                                 String os,Merchandise_V7 gift){
-        super(name,id,count,soldPrice,purchasePrice,screenSize,cpuHZ,memoryG,storageG,brand,os,gift);
+    public ShellColorChangePhone(String name, String id, int count, double soldPrice, double purchasePrice, Categroy categroy,
+                                 double screenSize, double cpuHZ, int memoryG, int storageG, String brand,
+                                 String os, Merchandise_V7 gift){
+        super(name,id,count,soldPrice,purchasePrice,categroy,screenSize,cpuHZ,memoryG,storageG,brand,os,gift);
         enableShellColorChange = false;
     }
 
