@@ -1,5 +1,7 @@
 package extendsDemo;
 
+import comm.StudyClass.Categroy;
+
 import java.util.Objects;
 
 public class Merchandise_V7 {
@@ -10,12 +12,14 @@ public class Merchandise_V7 {
     private double purchasePrice;  //商品进价
     //-----新增静态成员变量---
     public static String STATIC_MEMBER = "Common Merchandise";
+    //-----新增一个枚举属性------
+    private Categroy categroy;
 
     public Merchandise_V7() {
-        this("无名", "000", 0, 1, 1.1);
+        this("无名", "000", 0, 1, 1.1,null);
 
     }
-    public Merchandise_V7(String name, String id, int count, double soldPrice, double purchasePrice){
+    public Merchandise_V7(String name, String id, int count, double soldPrice, double purchasePrice,Categroy categroy){
         this.name = name;
         this.id = id;
         this.count = count;
@@ -24,7 +28,7 @@ public class Merchandise_V7 {
     }
 
     public void describe() {
-        System.out.println("商品名字叫做" + name + "，id是" + id + "。 商品售价是" + soldPrice
+        System.out.println("商品类别是"+ categroy.name() + "商品名字叫做" + name + "，id是" + id + "。 商品售价是" + soldPrice
                 + "。商品进价是" + purchasePrice + "。商品库存量是" + count +
                 "。销售一个的毛利润是" + calculateProfit());
     }

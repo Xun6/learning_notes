@@ -1,6 +1,8 @@
 package extendsDemo;
 
 
+import comm.StudyClass.Categroy;
+
 /** 一个小超市类 */
 public class LittleSuperMarketV7 {
     public String superMarketName;    //超市名称
@@ -30,7 +32,8 @@ public class LittleSuperMarketV7 {
                 "GIFT001",
                 1,
                 120,
-                60
+                60,
+                Categroy.ELECTRIC  //新增枚举类别
         );
 
         merchandisesV7 = new Merchandise_V7[merchandiseCount];
@@ -74,7 +77,8 @@ public class LittleSuperMarketV7 {
                         "ID" + i,
                         count,
                         purchasePrice * (1 + Math.random()),
-                        purchasePrice
+                        purchasePrice,
+                        Categroy.FOOD   //新增枚举类别
                 );
             }
             //用创建商品，给商品数组的第i个引用赋值
