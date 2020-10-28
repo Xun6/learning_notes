@@ -1,11 +1,14 @@
 package extendsDemo;
 
+import comm.StudyClass.AbstractExpireDateMerchandise;
 import comm.StudyClass.Categroy;
+
+import java.util.Date;
 
 /**
  * phone类 继承 Merchandise_V7类
  */
-public class Phone extends Merchandise_V7{
+public class Phone extends AbstractExpireDateMerchandise {
     //给phone的特有属性
 //    private double screenSize;
 //    private double cpuHZ;
@@ -37,6 +40,12 @@ public class Phone extends Merchandise_V7{
 //        this.setCount(count);
 //        this.setSoldPrice(soldPrice);
 //        this.setPurchasePrice(purchasePrice);
+    }
+
+    //-----实现的一个 AbstractExpireDateMerchandise类的抽象方法-----
+    @Override
+    public double actualValuesNow(double leftDatePercentage) {
+        return getSoldPrice() * (leftDatePercentage + 0.5);
     }
 
     //一些基本方法
@@ -103,6 +112,7 @@ public class Phone extends Merchandise_V7{
         return this.brand + ":" + this.os + ":" + super.getName();
     }
 
+    //商品描述
     public void describePhone(){
         System.out.println("此手机商品属性如下：");
 //        descript();

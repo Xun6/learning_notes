@@ -19,6 +19,13 @@ public class Merchandise_V7 {
         this("无名", "000", 0, 1, 1.1,null);
 
     }
+    public Merchandise_V7(String name, String id, int count, double soldPrice, double purchasePrice){
+        this.name = name;
+        this.id = id;
+        this.count = count;
+        this.soldPrice = soldPrice;
+        this.purchasePrice = purchasePrice;
+    }
     public Merchandise_V7(String name, String id, int count, double soldPrice, double purchasePrice,Categroy categroy){
         this.name = name;
         this.id = id;
@@ -27,8 +34,15 @@ public class Merchandise_V7 {
         this.purchasePrice = purchasePrice;
     }
 
+    //商品描述
     public void describe() {
         System.out.println("商品类别是"+ categroy.name() + "商品名字叫做" + name + "，id是" + id + "。 商品售价是" + soldPrice
+                + "。商品进价是" + purchasePrice + "。商品库存量是" + count +
+                "。销售一个的毛利润是" + calculateProfit());
+//        System.out.println("ceshi");
+    }
+    public void description() {
+        System.out.println("商品名字叫做" + name + "，id是" + id + "。 商品售价是" + soldPrice
                 + "。商品进价是" + purchasePrice + "。商品库存量是" + count +
                 "。销售一个的毛利润是" + calculateProfit());
     }
