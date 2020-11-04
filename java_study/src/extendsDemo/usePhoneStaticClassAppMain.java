@@ -25,7 +25,10 @@ public class usePhoneStaticClassAppMain {
         Phone.CPU cpu = new Phone.CPU(4.5,"default");
         System.out.println(cpu.toString());
 
-        Math.random();
+        //TODO 如果在外部创建成员内部类的对象，那么就需要制定这个引用是谁，语法如下，有点奇怪，用的比较少
+//        Phone.CPU cpu1 = phone.new CPU(4.5,"default");
+
+        Math.random(); //该方法是一个静态内部类，单例模式实现
 
     }
 }
