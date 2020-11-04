@@ -1,5 +1,6 @@
 package extendsDemo;
 
+import ObjectDemo.CPU;
 import comm.StudyClass.AbstractExpireDateMerchandise;
 import comm.StudyClass.Categroy;
 import comm.StudyClass.ExpireDateMerchandise;
@@ -25,12 +26,64 @@ public class Phone extends Merchandise_V7 implements ExpireDateMerchandise {
     private static int MAX_BUY_ONE_ORDER = 5;    //类变量
     // TODO 用 final 修饰引用，最难理解
     private final Merchandise_V7 gift;
+    //--新增静态内部类---------------------
+    private CPU cpu;
+
+    //TODO 静态内部类，就是在类中使用static修饰的类
+    //TODO 静态内部类和静态方法，静态变量一样，都是类的静态组成部分
+    //TODO 静态内部类也是类，在继承、实现接口方面都是一样的。
+    public static class CPU {
+        private double speed;
+        private String producer;
+
+        //构造方法
+        public CPU(double speed,String producer){
+            this.speed = speed;
+            this.producer = producer;
+        }
+
+        //getter\setter方法
+        public double getSpeed(){
+            //静态内部类还可以调用外部类（phone）中的 private的属性
+            Phone phone = null;
+            phone.memoryG = 99;
+            return speed;
+        }
+
+        public void setSpeed(double speed) {
+            this.speed = speed;
+        }
+
+        public String getProducer() {
+            return producer;
+        }
+
+        public void setProducer(String producer) {
+            this.producer = producer;
+        }
+
+        //toString方法
+        @Override
+        public String toString() {
+            return "CPU{" +
+                    "speed=" + speed +
+                    ", producer='" + producer + '\'' +
+                    '}';
+        }
+    }
+
+    public void useStaticClass(){
+        //TODO 外部类也可以访问静态内部类中的 private属性
+        this.cpu.producer = "";
+    }
 
     public Phone(String name, String id, int count, double soldPrice, double purchasePrice, Categroy categroy,
                  double screenSize, double cpuHZ, int memoryG, int storageG, String brand, String os, Merchandise_V7 gift){
 
         super(name,id,count,soldPrice,purchasePrice,categroy);
         this.screenSize = screenSize;
+        //在外部构造方法内new 静态内部类的实例
+        this.cpu = new CPU(cpuHZ,"default");
         this.cpuHZ = cpuHZ;
         this.memoryG = memoryG;
         this.storageG = storageG;
@@ -142,7 +195,8 @@ public class Phone extends Merchandise_V7 implements ExpireDateMerchandise {
 //        descript();
         System.out.println("手机厂商为："+brand + ";系统为："+os+";硬件配置：\n"+
                 "屏幕："+ screenSize +"寸\n" +
-                "cpu主频："+cpuHZ + "GHz\n"+
+                "cpu信息" + cpu +
+                "\ncpu主频："+cpuHZ + "GHz\n"+
                 "内存"+memoryG+"G\n"+
                 "存储空间"+storageG+"Gb\n");
     }
@@ -166,5 +220,43 @@ public class Phone extends Merchandise_V7 implements ExpireDateMerchandise {
 //        double cost = count * getSoldPrice();
 //        System.out.println("共花费：" + cost);
 //        return cost;
+    }
+}
+
+
+
+// >> TODO 非公有类，不能访问类的 private的属性
+class Memory{
+    private long capacity;
+    private String producer;
+
+    //构造方法
+    public Memory(long capacity,String producer){
+        this.capacity = capacity;
+        this.producer = producer;
+    }
+
+    public void test(){
+        //不能访问类的 private属性
+//        Phone p = null;
+//        p.MemoryG = 9;
+    }
+
+    //getter/setter方法
+
+    public long getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(long capacity) {
+        this.capacity = capacity;
+    }
+
+    public String getProducer() {
+        return producer;
+    }
+
+    public void setProducer(String producer) {
+        this.producer = producer;
     }
 }
