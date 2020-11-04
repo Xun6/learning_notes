@@ -2,13 +2,16 @@ package extendsDemo;
 
 import comm.StudyClass.AbstractExpireDateMerchandise;
 import comm.StudyClass.Categroy;
+import comm.StudyClass.ExpireDateMerchandise;
 
 import java.util.Date;
 
 /**
  * phone类 继承 Merchandise_V7类
  */
-public class Phone extends AbstractExpireDateMerchandise {
+public class Phone extends Merchandise_V7 implements ExpireDateMerchandise {
+    private Date produceDate;
+    private Date expirationDate;
     //给phone的特有属性
 //    private double screenSize;
 //    private double cpuHZ;
@@ -43,9 +46,30 @@ public class Phone extends AbstractExpireDateMerchandise {
     }
 
     //-----实现的一个 AbstractExpireDateMerchandise类的抽象方法-----
+//    @Override
+//    public double actualValuesNow(double leftDatePercentage) {
+//        return getSoldPrice() * (leftDatePercentage + 0.5);
+//    }
+
+    //-----实现接口的方法----
+    @Override
+    public Date getProduceDate() {
+        return produceDate;
+    }
+
+    @Override
+    public Date getExpireDate() {
+        return expirationDate;
+    }
+
+//    @Override
+//    public double leftDatePercentage() {
+//        return 0;
+//    }
+
     @Override
     public double actualValuesNow(double leftDatePercentage) {
-        return getSoldPrice() * (leftDatePercentage + 0.5);
+        return 0;
     }
 
     //一些基本方法

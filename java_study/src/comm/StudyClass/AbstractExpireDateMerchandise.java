@@ -31,54 +31,54 @@ public abstract class AbstractExpireDateMerchandise extends Merchandise_V7 imple
         super(name,id,count,soldPrice,purchasePrice,categroy);
     }
 
-
-    public boolean notExpireInDays(int days) {
-        return daysBeforeExpire() > days;  //剩余保质期是否大于 参数值
-    }
-
-    public Date getProduceDate() {
-        return produceDate;
-    }
-
-    public Date getExpireDate() {
-        return expirationDate;
-    }
-
-    public double leftDatePercentage() {
-        return 0;
-    }
-
-    public double actualValuesNow(double leftDatePercentage) {
-        return getSoldPrice();
-    }
+//
+//    public boolean notExpireInDays(int days) {
+//        return daysBeforeExpire() > days;  //剩余保质期是否大于 参数值
+//    }
+//
+//    public Date getProduceDate() {
+//        return produceDate;
+//    }
+//
+//    public Date getExpireDate() {
+//        return expirationDate;
+//    }
+//
+//    public double leftDatePercentage() {
+//        return 0;
+//    }
+//
+//    public double actualValuesNow(double leftDatePercentage) {
+//        return getSoldPrice();
+//    }
 
 //-----------------------------
-    /**
-     *
-     * @return
-     */
-    private long daysBeforeExpire(){
-        long expireTime = expirationDate.getTime(); //获取过期时间，单位 毫秒
-        long left = expireTime - System.currentTimeMillis();  //剩余保质期时间，单位毫秒
-        if(left < 0){
-            return -1;
-        }
-        //计算剩余保质期天数
-        return left/(24 * 3600 * 1000);
-    }
-
-    /**
-     *
-     * @return
-     */
-    private long daysAfterProduce(){
-        long ProduceTime = produceDate.getTime(); //获取过期时间，单位 毫秒
-        long past = System.currentTimeMillis() - ProduceTime;  //单位毫秒
-        if(past < 0){
-            return -2;
-        }
-        //计算剩余保质期天数
-        return past / (24 * 3600 * 1000);
-    }
+//    /**
+//     *
+//     * @return
+//     */
+//    private long daysBeforeExpire(){
+//        long expireTime = expirationDate.getTime(); //获取过期时间，单位 毫秒
+//        long left = expireTime - System.currentTimeMillis();  //剩余保质期时间，单位毫秒
+//        if(left < 0){
+//            return -1;
+//        }
+//        //计算剩余保质期天数
+//        return left/(24 * 3600 * 1000);
+//    }
+//
+//    /**
+//     *
+//     * @return
+//     */
+//    private long daysAfterProduce(){
+//        long ProduceTime = produceDate.getTime(); //获取过期时间，单位 毫秒
+//        long past = System.currentTimeMillis() - ProduceTime;  //单位毫秒
+//        if(past < 0){
+//            return -2;
+//        }
+//        //计算剩余保质期天数
+//        return past / (24 * 3600 * 1000);
+//    }
 
 }
