@@ -30,6 +30,27 @@ public class Phone extends Merchandise_V7 implements ExpireDateMerchandise {
     //--新增静态内部类---------------------
     private CPU cpu;
 
+    //----新增接口引用变量----
+    private extendsDemo.UnitSpec cpuu;
+
+    //==基本方法===
+    public CPU getCpu() {
+        return cpu;
+    }
+
+    public void setCpu(CPU cpu) {
+        this.cpu = cpu;
+    }
+
+    public extendsDemo.UnitSpec getCpuu() {
+        return cpuu;
+    }
+
+    public void setCpuu(extendsDemo.UnitSpec cpuu) {
+        this.cpuu = cpuu;
+    }
+
+
 
     //TODO 接口可以定义为静态内部接口------------------
     public static interface UnitSpec{
@@ -102,31 +123,46 @@ public class Phone extends Merchandise_V7 implements ExpireDateMerchandise {
         //---新增局部变量--
         double localCpuHZ = cpuHZ;
 
-        //================实现接口======
-        //TODO 局部内部类，是在类的方法中直接定义类
-        //TODO 局部内部类，不可以包含任何静态的成分
-        //TODO 局部内部类，不可以有访问控制符
-        class CPUU implements UnitSpec{
-            //可以final static 基本数据类型变量
-            final static int abc = 999;
-            private String producer;
 
-            //构造方法
-            public CPUU(String producer){
-                this.producer = producer;
-            }
+        //TODO =====匿名类语法,实现接口内的抽象方法，类似new出一个对象==========
+        //TODO 语法如下：new后面跟着一个接口 或 抽象类
+        this.cpuu = new extendsDemo.UnitSpec() {
             @Override
             public double getNumSpec() {
-                //仅做数据演示，无实际意义
-                //TODO 局部内部类可以访问参数和局部变量，但是它俩必须是实际final的，即不能再对他赋值
-                return Math.max(Phone.this.speeds,Math.max(cpuHZ,localCpuHZ));
+                return 0;
             }
 
             @Override
             public String getProducer() {
-                return producer;
+                return "default";
             }
-        }
+        };
+
+        //================实现接口======
+        //TODO 局部内部类，是在类的方法中直接定义类
+        //TODO 局部内部类，不可以包含任何静态的成分
+        //TODO 局部内部类，不可以有访问控制符
+//        class CPUU implements UnitSpec{
+//            //可以final static 基本数据类型变量
+//            final static int abc = 999;
+//            private String producer;
+//
+//            //构造方法
+//            public CPUU(String producer){
+//                this.producer = producer;
+//            }
+//            @Override
+//            public double getNumSpec() {
+//                //仅做数据演示，无实际意义
+//                //TODO 局部内部类可以访问参数和局部变量，但是它俩必须是实际final的，即不能再对他赋值
+//                return Math.max(Phone.this.speeds,Math.max(cpuHZ,localCpuHZ));
+//            }
+//
+//            @Override
+//            public String getProducer() {
+//                return producer;
+//            }
+//        }
 
 //        this.setName(name);
 //        this.setId(id);
