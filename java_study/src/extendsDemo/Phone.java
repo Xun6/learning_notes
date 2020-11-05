@@ -24,11 +24,19 @@ public class Phone extends Merchandise_V7 implements ExpireDateMerchandise {
     private String brand;
     private String os;
     private static int MAX_BUY_ONE_ORDER = 5;    //类变量
+    private double speeds;
     // TODO 用 final 修饰引用，最难理解
     private final Merchandise_V7 gift;
     //--新增静态内部类---------------------
     private CPU cpu;
 
+
+    //TODO 接口可以定义为静态内部接口------------------
+    public static interface UnitSpec{
+        public double getNumSpec();
+
+        public String getProducer();
+    }
     //TODO 静态内部类，就是在类中使用static修饰的类
     //TODO 静态内部类和静态方法，静态变量一样，都是类的静态组成部分
     //TODO 静态内部类也是类，在继承、实现接口方面都是一样的。
@@ -90,6 +98,35 @@ public class Phone extends Merchandise_V7 implements ExpireDateMerchandise {
         this.brand = brand;
         this.os = os;
         this.gift = gift;
+
+        //---新增局部变量--
+        double localCpuHZ = cpuHZ;
+
+        //================实现接口======
+        //TODO 局部内部类，是在类的方法中直接定义类
+        //TODO 局部内部类，不可以包含任何静态的成分
+        //TODO 局部内部类，不可以有访问控制符
+        class CPUU implements UnitSpec{
+            //可以final static 基本数据类型变量
+            final static int abc = 999;
+            private String producer;
+
+            //构造方法
+            public CPUU(String producer){
+                this.producer = producer;
+            }
+            @Override
+            public double getNumSpec() {
+                //仅做数据演示，无实际意义
+                //TODO 局部内部类可以访问参数和局部变量，但是它俩必须是实际final的，即不能再对他赋值
+                return Math.max(Phone.this.speeds,Math.max(cpuHZ,localCpuHZ));
+            }
+
+            @Override
+            public String getProducer() {
+                return producer;
+            }
+        }
 
 //        this.setName(name);
 //        this.setId(id);
