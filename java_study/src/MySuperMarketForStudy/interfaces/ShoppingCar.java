@@ -1,6 +1,5 @@
-package MySuperMarketForStudy;
+package MySuperMarketForStudy.interfaces;
 
-import java.util.Arrays;
 import java.util.Date;
 
 /**
@@ -12,9 +11,9 @@ public class ShoppingCar {
     private int curr; // 已加入了多少个商品
     private int max; // 最多能买多少个商品
 
-    //构造方法,初始化购物车
+    //构造方法,初始化购物车,设置最大存放量
     public ShoppingCar(int maxTypeToBuy){
-        buy = new Merchandise[maxTypeToBuy]; // 加入多少中商品在购物车
+        buy = new Merchandise[maxTypeToBuy]; // 加入多少种商品在购物车
         count = new int[maxTypeToBuy];
         max = maxTypeToBuy;
         curr = 0;  //初始化为 0
@@ -40,16 +39,16 @@ public class ShoppingCar {
 
     //计算购物车商品实际售价总和
     public double calculateOriginCost(){
-        double ret = 0;
+        double result = 0;
         int pos = -1; //确保索引从 0 开始
         for(Merchandise m : buy){
             pos++;
             if (m == null) {
                 continue;
             }
-            ret += m.getSoldPrice() * count[pos];
+            result += m.getSoldPrice() * count[pos];
         }
-        return ret;
+        return result;
     }
 
     //重写toString()方法
@@ -68,7 +67,7 @@ public class ShoppingCar {
                continue;
             }
             stringBuilder.append(m.getGategory().name()).append("\t").append(m.getName()).append("\t")
-                    .append(count[pos]).append("\t").append(m.getSoldPrice() * count[pos]).append("\t");
+                    .append(count[pos]).append("\t").append(m.getSoldPrice() * count[pos]).append("\n");
         }
         stringBuilder.append("应付总金额为：").append(calculateOriginCost()).append("\n");
         stringBuilder.append("==========================");

@@ -1,4 +1,4 @@
-package MySuperMarketForStudy;
+package MySuperMarketForStudy.interfaces;
 
 /**
  * 服务员接口

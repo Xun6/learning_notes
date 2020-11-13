@@ -1,4 +1,4 @@
-package MySuperMarketForStudy;
+package MySuperMarketForStudy.interfaces;
 
 /**
  * 超市的折扣策略接口

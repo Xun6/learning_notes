@@ -1,4 +1,4 @@
-package MySuperMarketForStudy;
+package MySuperMarketForStudy.interfaces;
 
 /**
  * 会员卡（VIP卡、打折卡、赠品卡等）接口
