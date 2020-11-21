@@ -10,13 +10,16 @@ public class WhatIsCollectionAppMain {
 //        myLinkList.add(date);
 
 
-        //----------------------------------
+        //------------元素按顺序----------------------
 
-//        printCollection(addElementsToCollection(new ArrayList()));
+        printCollection(addElementsToCollection(new ArrayList()));
 //        printCollection(addElementsToCollection(new LinkedList()));
 
-        printList((List) addElementsToCollection(new ArrayList()));
-        printList((List) addElementsToCollection(new MyLinkList()));
+//        printList((List) addElementsToCollection(new ArrayList()));
+//        printList((List) addElementsToCollection(new MyLinkList()));
+
+        //===========元素不重复，无顺序=============
+        printCollection(addElementsToCollection(new HashSet()));
 
     }
 
