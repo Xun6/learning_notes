@@ -11,7 +11,7 @@ public class StudyLambdaAppMain {
         List<String> myList = addElementsToList(new ArrayList<>());
         String outside = "outside String"; // 定义一个局部变量
 
-        // TODO 匿名内部类版，遍历    //////// 第一种
+        // TODO 匿名内部类版，引入 Consumer（此处仅作示例） 接口（此处可以是任意一个接口）
         myList.forEach(new Consumer<String>() {
             @Override
             public void accept(String s) {
@@ -53,11 +53,13 @@ public class StudyLambdaAppMain {
         myMap.forEach(StudyLambdaAppMain::processToString);
 
 
+        //=============================================
+        myList.forEach(StudyLambdaAppMain::processStr);  // 会抛出异常
+
     }
 
-
     // 向链表中添加元素
-    private static List<String> addElementsToList(List<String> list){
+    public static List<String> addElementsToList(List<String> list){
         for(int i =0; i < 20; i++){
             list.add("str" + i);
         }
@@ -70,6 +72,10 @@ public class StudyLambdaAppMain {
     }
 
     private static void processToString(String str1,String str2){
-        System.out.println(str1 + str2);
+        System.out.println(str1 + " " + str2);
+    }
+
+    private static void processStr(String s){
+        throw new RuntimeException();
     }
 }
