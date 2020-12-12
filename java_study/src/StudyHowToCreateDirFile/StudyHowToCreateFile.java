@@ -119,7 +119,7 @@ public class StudyHowToCreateFile {
             }
             pathList.add(path);  // 加入元素
         }
-        return createDir(pathList.toArray(new String[0]));
+        return createDir(pathList.toArray(new String[0]));  // 保证传递的是String 类型的数组
     }
 
     // 创建文件目录
