@@ -9,7 +9,7 @@ public class ShowSocketClass {
     public static void main(String[] args) throws UnknownHostException {
         ServerSocket ss = null;
         Socket s = null;
-        InetAddress address = InetAddress.getByName("www.geekbang.com");  // 获取该域名的IP地址
+        InetAddress address = InetAddress.getByName("www.geekbang.com");  // 获取该域名的IP地址（域名解析）
         System.out.println(address);
     }
 }
