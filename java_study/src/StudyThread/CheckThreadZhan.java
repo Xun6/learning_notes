@@ -1,5 +1,8 @@
 package StudyThread;
 
+/**
+ * 检查线程栈
+ */
 public class CheckThreadZhan {
     public static void main(String[] args) {
         m1();
