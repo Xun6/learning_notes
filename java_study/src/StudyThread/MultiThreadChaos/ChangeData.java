@@ -18,8 +18,12 @@ public class ChangeData implements Runnable{
     @Override
     public void run() {
         for(int i = 0; i < loopCount; i++){
-            dataHolder.change(delta); // 递增delta
+//            dataHolder.change(delta); // 递增delta
+            // TODO 调用 synchronized修饰的静态方法
+//            DataHolder.changeStatic(delta);
+            dataHolder.changeSyncBlock(delta); // 代码块控制线程同步
         }
         dataHolder.print(); // 输出number
+//        DataHolder.printStatic(); // 调用静态方法 ，输出number
     }
 }
