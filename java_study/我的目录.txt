@@ -2,3 +2,9 @@ java笔记
 
 守护线程
     1、守护线程（daemon thread），如果一个进程里没有线程，或者线程都是守护线程，那么进程就结束了
+
+同步控制之synchronized
+    1、synchronized是不公平锁
+
+同步控制之wait notify
+    1、任何一个java中的对象都可以调用 wait notify方法
