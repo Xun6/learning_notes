@@ -19,5 +19,10 @@ java笔记
 死锁
     1、一种死锁形成的条件：在获取新的资源之前，没有释放之前获取的资源
     2、如何避免死锁：按顺序申请资源
-    3、工具：使用jstasck查看死锁信息   命令： jsp查看进程编号
+    3、工具：使用jstack查看死锁信息    命令： jsp查看进程编号
                                           jstack -l  进程编号
+
+Threadlocal 线程专属的变量
+    1、每个线程（Thread）独有的
+    2、ThreadLocal的get()/set(value),最终会将ThreadLcoal作为变量传给ThreadLocalMap
+    3、key就是ThreadLocal，value就是set(value)进去的值
