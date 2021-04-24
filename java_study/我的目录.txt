@@ -32,3 +32,9 @@ Threadlocal 线程专属的变量
     2、Calendar类 是操作时间的类
     3、需要定时的任务，要继承 TimerTask 对象
     4、Timer 对象用来调度 定时任务
+
+Volatile关键字
+    1、JMM(java内存模型)，规定了内存同步和缓存失效等节点，限制了指令重排
+    2、volatile关键字强制每次都从主存获取变量数据（确保多线程情况下读到相同的副本）
+    3、volatile会影响指令重排
+    4、JMM是java的内涵之一，java字节码（Java Byte Code）使得java在指令层面有了统一的标准，JMM更让java在执行优化层面也有了统一的标准
