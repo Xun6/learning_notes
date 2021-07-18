@@ -21,9 +21,9 @@ public class LearnConcurrentAppMain {
         int parallel = 10;
         List<Thread> atomicThreads = new ArrayList<>();
         for (int p=0; p < parallel; p++) {
-            int loopCount = loop / parallel; //均分10个线程的循环执行此时
+            int loopCount = loop / parallel; //均分10个线程的循环执行次数
             if(p == parallel -1){
-                loopCount = loop - (loop / parallel) * (parallel - 1); // 因线程执行不均，计算最后一个线程需要循环执行的次数
+                loopCount = loop - (loop / parallel) * (parallel - 1); // 因线程可能执行不均，计算最后一个线程需要循环执行的次数
             }
             int finalLoopCount = loopCount;
             Thread atomic = new Thread(()-> {
@@ -37,7 +37,7 @@ public class LearnConcurrentAppMain {
                System.out.println("Atomic takes "+(System.currentTimeMillis() - start));//打印每个线程的执行时间
             });
             atomic.start();
-            atomicThreads.add(atomic); // 加入Thread链表
+            atomicThreads.add(atomic); // 加入Thread列表集合
         }
 
 

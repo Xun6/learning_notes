@@ -9,6 +9,7 @@ public class AccessMemoryVolatile {
 
     public static void main(String[] args) {
         int loopcount = Integer.MAX_VALUE / 30;
+        System.out.println(loopcount);
         // TODO volatile 每次读取都要直达内存，不能使用缓存，所以耗费的时间略多
         AccessMemoryVolatile accessMemoryVolatile = new AccessMemoryVolatile();
         Thread volatileAdder = new Thread(() ->{
